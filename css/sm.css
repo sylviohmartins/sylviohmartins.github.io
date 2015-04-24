@@ -1,0 +1,619 @@
+/** 
+* www.sylviohm.meximas.com
+* 
+* Layout padrão para o site Sylvio Martins. 
+* 
+* Esta folha de estilo descreve a estrutura e os principais componentes empregados na interface do site.
+* 
+* @project SM 
+* @version 1.0 
+* @package layout
+* @author Sylvio H. Martins
+* @copyright 2014 SM
+* 
+**/
+
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Kelly+Slab);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@font-face {
+  font-family: 'James Fajardo';
+  src: url("../fonts/james-fajardo/james_fajardo-webfont.eot");
+  src: url("../fonts/james-fajardo/james_fajardo-webfont.eot-#iefix") format('embedded-opentype'),
+    url("../fonts/james-fajardo/james_fajardo-webfont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Estrutura
+   ========================================================================== */
+* {
+   margin: 0;
+   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before, 
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body {
+  height:100%;
+}
+::selection {
+   background: #b82536;
+   color: #ffffff;
+   text-decoration: none;
+}
+div {
+  display: block;
+}
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+.header {
+  position: fixed;
+  max-height: 60px;
+  width: 100%;
+  background: none;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;  top: -100px;
+  z-index: 9999999;
+}
+.sticky {
+  background-color: #fff;
+  opacity: 1;
+  top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.70);
+}
+.header .container {
+  width: 960px;
+  height: 60px;
+  position: relative;
+}
+.header .container:before {
+  position: absolute;
+  height: 60px;
+  background-color: #b82536;
+  margin-left: -99999em;
+  padding-left: 99999em;
+  box-shadow: 34px 10px rgb(0,0,0,.5);
+}
+.header .container .logo {
+  float: left;
+  width: 100px;
+  height: 60px;
+  background-color: #b82536;
+}
+.header .container .logo a {
+  font-family: 'Kelly Slab', cursive;
+  font-size: 55px;
+  color: #FFF;
+  line-height: 60px;
+}
+.header .container ul {
+  float: right;
+}
+.header .container ul li {
+  display: inline;
+  float: left;
+}
+.header .container ul li a {
+  font-size: 16px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #000;
+  line-height: 60px;
+  padding: 21px;
+  text-transform: uppercase;
+  -webkit-transition: background 0.1s ease-in-out;  
+  -moz-transition: background 0.1s ease-in-out;  
+  -o-transition: background 0.1s ease-in-out;  
+  -ms-transition: background 0.1s ease-in-out;  
+  transition: background 0.1s ease-in-out;
+}
+.header .container ul li a:hover {
+  background-color: #b82536;
+  color: #FFF;
+}
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+#home {
+  background-image: url("../images/parallax-home.jpg");
+}
+#home .container h1 {
+  color: #FFF;
+  font-family: 'James Fajardo';
+  font-size: 160px;
+  transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  margin: 0;
+}
+#home .container h2 {
+  color: #FFF;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: "Helvetica";
+  font-size: 45px;
+}
+.bgParallax {
+  font-family: 'Elsie', cursive;
+  color:#FFF;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+  background-size: cover;
+  min-height: 100%;
+  background-position: 50% 0;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.bgParallax::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  content: "";
+  background: rgba(0,0,0,.65) url("../images/bg-overlay.gif") repeat;
+  opacity: 0.1;
+}
+.bgParallax > * {
+  position: relative;
+  z-index: 5;
+}
+.bgParallax .container {
+  width: 80%;
+  text-align: center;
+  padding-top: 15%;
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+.about {
+  height: 650px;
+  width: 100%;
+  overflow: hidden;
+}
+.about .container {
+  text-align: center;
+  padding: 50px 0 10px 0;
+}
+.about .container h1,
+.portfolio .container h1,
+.contact .container h1 {
+  color: #353535;
+  font-family: 'Montserrat', sans-serif;  
+  font-weight: 700;    
+  text-transform: uppercase;  
+  font-size: 38px;
+}
+.about .container p {
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #353535;
+  font-family: 'Lato', sans-serif;  
+  font-weight: 300;    
+  font-size: 15px;  
+  line-height: 20px;        
+  opacity: 1;
+  text-align: justify;
+}
+.img-circle {
+  border-radius: 50%;
+}
+.member_photo {
+  width: 140px;
+  height: 140px;
+  margin: 40px auto;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.about .container .buttons {
+    margin-top: -38px;
+    width: 100%;
+}
+.about .container .buttons a {
+  padding: 10px;
+  background: none;
+  border: 1px solid #606060;
+  color: #353535;  font-family: 'Lato', sans-serif;
+  position: absolute;
+  text-decoration: none;
+}
+.about .container .buttons a:hover {
+  background-color: #353535;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Portfolio
+   ========================================================================== */
+.portfolio {
+  height: auto;
+  overflow: hidden;
+  background-color: #F3F2F2;
+  max-width: 100%;
+  width: 100%;
+}
+.portfolio .container {
+  text-align: center;
+  padding-top: 80px;  
+  padding-bottom: 80px;
+}
+.portfolio .container h1 {
+  margin-bottom: 40px;
+}
+
+/* Projects Portfolio
+   ========================================================================== */
+.portfolioFilter {
+  display: -webkit-box;
+  list-style: none;
+  margin: 0 5px 10px;
+}
+.portfolioFilter a { 
+  display: block;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  border: 1px solid rgba(168, 166, 166, 0.39);
+  padding: 7px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.portfolioFilter a.current { 
+  background: #b82536;
+  color: #fff;
+  border: 1px solid #b82536;
+}
+.isotope-item {
+  z-index: 2;
+}
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  transition-property: transform, opacity;
+}
+.grid span {
+  float: left;
+  max-width: 250px;
+  width: 25%;
+  color: #fff;
+  cursor: pointer;
+}
+.grid figure {
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+  background: #333;
+}
+.grid figure img {
+  position: relative;
+  display: block;
+  width: 100%;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.grid figcaption {
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.grid figcaption h2 {
+  margin: 0 0 20px 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 130%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+.grid figcaption p {
+  padding: 0 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.grid figcaption h2,
+.grid figcaption p {
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.grid figure a {
+  position: absolute;
+  padding: 4px 20px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.grid figcaption,
+.grid figcaption h2,
+.grid figcaption p,
+.grid figure a {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.grid svg {
+  position: absolute;
+  top: -1px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  margin-left: -120px;
+}
+.grid svg path {
+  fill: #b82536;
+}
+.grid span:hover figure img {
+  opacity: 1;
+}
+.grid span:hover figcaption h2,
+.grid span:hover figcaption p {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.grid span:hover figcaption p {
+  opacity: 0;
+}
+.demo .grid figure a {
+  top: 50%;
+  left: 50%;
+  border: 3px solid #fff;
+  background: transparent;
+  color: #fff;
+  opacity: 0;
+  -webkit-transform: translateY(-50%) translateX(-50%) scale(0.25);
+  transform: translateY(-50%) translateX(-50%) scale(0.25);
+}
+.demo .grid figure a:hover {
+  border: 3px solid #3498db;
+  background: transparent;
+  color: #3498db;
+  text-decoration: underline;
+}
+.demo .grid span:hover figure a {
+  opacity: 1;
+  -webkit-transform: translateY(-50%) translateX(-50%) scale(1);
+  transform: translateY(-50%) translateX(-50%) scale(1);
+  cursor: pointer;
+}
+.modal .modal-dialog .modal-content .modal-body img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   Contact
+  ========================================================================== */
+.contact {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  background: url("../images/parallax-contact.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.contact .container {
+  text-align: center;
+  padding: 90px 0 70px 0;
+  width: 100%;
+}
+.contact .container h1 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Form Contact
+   ========================================================================== */
+.ctt-form {
+  position: relative;
+  width: 100%;
+}
+.ctt-form:before, 
+.ctt-form:after { 
+  display: table; 
+}
+.ctt-form:after { 
+  clear: both; 
+}
+.ctt-form-column {
+  display: inline-block;
+  width: 570px;
+}
+.ctt-form label {
+  display: block;
+  padding: 40px 5px 5px 2px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.ctt-form input,
+.ctt-form textarea {
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 1.4em;
+  padding: 5px 10px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  background: transparent;
+}
+.ctt-form input,
+.ctt-form textarea {
+  border: 3px solid #fff;
+  margin-bottom: 10px;
+}
+.ctt-form input:hover,
+.ctt-form textarea:hover {
+  border: 3px solid #b82536;
+  color: #fff;
+}
+.ctt-form textarea {
+  min-height: 200px;
+}
+.ctt-form input:focus,
+.ctt-form textarea:focus,
+.ctt-form label:active + input,
+.ctt-form label:active + textarea {
+  outline: none;
+  border: 3px solid #b82536;
+}
+.ctt-form select:focus {
+  outline: none;
+}
+input-placeholder { /* WebKit browsers */
+  color: #fff;
+  font-style: italic;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #fff;
+  font-style: italic;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #fff;
+  font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #fff;
+  font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #fff;
+  font-style: italic;
+}
+.ctt-form .ctt-form-column .send-message {
+  background: none;
+  border: 3px solid #fff;
+  padding: 11px;
+  font-size: 20px;
+  width: 100%;
+  color: #fff;
+}
+.ctt-form .ctt-form-column .send-message:hover {
+  border: 3px solid #b82536;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: #0F1219;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Social Footer
+   ========================================================================== */
+.footer .container p {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  position: absolute;
+  left: 40%;
+  line-height: 50px;
+}
+.dark {
+  background: none repeat scroll 0 0 #1B1B1B;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.dark .socialfooter {
+  text-align:center;
+  float: right;
+}
+.dark .socialfooter li {
+  display: inline-block;
+  position: relative;
+}
+.dark .socialfooter li a {
+  color: #FFFFFF;
+  display: block;
+  position: relative;
+  font-size: 16px;
+  padding: 15px;
+  width: 45px;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  -ms-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+.dark .socialfooter li a:hover {
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  -ms-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+.ft-twitter:hover, 
+.ft-facebook:hover, 
+.ft-gplus:hover, 
+.ft-skype:hover {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.ft-twitter:hover {
+  background: #4CC2FF !important;
+}
+.ft-facebook:hover {
+  background: #3B5998 !important;
+}
+.ft-gplus:hover {
+  background: #D23E2B !important;
+}
+.ft-skype:hover {
+  background: #0EABEE !important;
+}
